@@ -9,9 +9,10 @@ Open `index.html` in a browser. HTML, CSS and JavaScript are self-contained; ima
 ## Current scope
 
 - Responsive Persian RTL storefront, search and category filters.
-- Product dialog and independent galleries for three draft bomber colors.
+- Ten products, with product dialogs and independent galleries by color.
+- Four recently added styles use clean AI catalog reconstructions from the owner's garment references; screenshots remain as source files only.
 - No backend, payment, order storage, or production deployment.
-- Prices, sizes, stock and final color names are not confirmed.
+- Confirmed prices: Makan long sleeve, 1,480,000 toman; imported cropped sweatshirt, 1,680,000 toman. Other prices, sizes, stock and final color names remain unconfirmed.
 - Model images are synthetic previews from supplied references and require product comparison before sales use.
 
 ## Next steps
