@@ -18,7 +18,9 @@ For Cloudflare Pages Git integration:
 - Build command: leave blank
 - Build output directory: `public`
 
-The site is not yet deployed. Connect the repository in the hosting dashboard, then deploy. Do not use the repository URL as the customer-facing store URL.
+The preview is deployed on Cloudflare Pages at https://lorence-shop.pages.dev/ with automatic deployments from `main`. The first successful deployment is `e993556c-08d2-4a40-acea-3933c8b9c218` from commit `f004409a782183d1bb823ea5e05ff5e689096ff9`.
+
+The preview remains a catalog demonstration: order recording and payment are not enabled. Public URL reachability may depend on the visitor's network; the publishing session confirmed Cloudflare's deployment success but its local network timed out on pages.dev.
 
 ## Current scope
 
