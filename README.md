@@ -11,10 +11,18 @@ Open `index.html` from the prepared local bundle to inspect the storefront. Keep
 - Ten products with search, category filters, and separate galleries by color.
 - Inquiry basket with quantities, requested sizes, browser persistence, and a copyable request summary.
 - Shareable links identify the selected product and color.
-- WhatsApp handoff is prepared, but `storeContact.whatsappNumber` is still `null`. The WhatsApp link remains hidden until the store number is supplied.
+- WhatsApp handoff is configured for the supplied store business number, `+989102453713`. After preparing the full request, the WhatsApp link opens the store conversation with that text filled in; the customer sends it themselves.
 - Store address for in-person shopping: خیابان افسریه، پانزده‌متری دوم، حدفاصل خیابان‌های ۳۰ و ۳۱.
 
 The basket prepares an inquiry. It does not record an order on a server, reserve inventory, confirm payment, or send a message automatically. Online payment and an order-management backend are not implemented.
+
+## Completing an inquiry
+
+From the basket, “تکمیل درخواست خرید” opens a form with optional name, phone number, and a note. The customer can leave the delivery method for discussion, choose in-person shopping, or request shipping. A destination city is required only for shipping; no home address, shipping rate, or delivery availability is assumed. In-person shopping shows the supplied store address.
+
+The prepared preview, full-text copy, and WhatsApp handoff use the same request text, including the selected products, colors, quantities, sizes, and supplied contact/delivery details. The basket also retains a quick-copy option for selections alone. The store must confirm stock, final price, and delivery arrangements in conversation.
+
+The site keeps contact and delivery fields in the current page only and does not save them in localStorage or send them to a server. Basket selections are stored separately in the browser. Copying text does not send it; opening WhatsApp prepares a conversation, and the customer must press Send there.
 
 ## Catalog data and editing
 
@@ -49,4 +57,4 @@ Catalog model images are synthetic reconstructions based on the supplied garment
 
 ## Next steps
 
-Supply the store's WhatsApp number, confirm product information and sales/delivery policies, then decide whether online order storage, payment, or an authenticated publishing workflow is needed.
+Confirm product information and sales/delivery policies, then decide whether online order storage, payment, or an authenticated publishing workflow is needed.
