@@ -13,6 +13,7 @@ Open `index.html` from the prepared local bundle to inspect the storefront. Keep
 - Shareable links identify the selected product and color.
 - WhatsApp handoff is configured for the supplied store business number, `+989102453713`. After preparing the full request, the WhatsApp link opens the store conversation with that text filled in; the customer sends it themselves.
 - Store address for in-person shopping: خیابان افسریه، پانزده‌متری دوم، حدفاصل خیابان‌های ۳۰ و ۳۱.
+- `guide.html` explains the purchase steps, contact options, and common shopping questions. It is linked from the storefront navigation, footer, and basket help.
 
 The basket prepares an inquiry. It does not record an order on a server, reserve inventory, confirm payment, or send a message automatically. Online payment and an order-management backend are not implemented.
 
