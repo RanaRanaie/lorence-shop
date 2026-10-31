@@ -22,7 +22,7 @@ From the basket, “تکمیل درخواست خرید” opens a form with opti
 
 The prepared preview, full-text copy, and WhatsApp handoff use the same request text, including the selected products, colors, quantities, sizes, and supplied contact/delivery details. The basket also retains a quick-copy option for selections alone. The store must confirm stock, final price, and delivery arrangements in conversation.
 
-The site keeps contact and delivery fields in the current page only and does not save them in localStorage or send them to a server. Basket selections are stored separately in the browser. Copying text does not send it; opening WhatsApp prepares a conversation, and the customer must press Send there.
+The site keeps contact and delivery fields in the current page only and does not save them in localStorage or submit them to a Lorence backend. Basket selections are stored separately in the browser. Copying text does not send it. Opening the WhatsApp handoff passes the prepared text to WhatsApp; the customer must press Send there to message the store.
 
 ## Catalog data and editing
 
