@@ -14,13 +14,70 @@ select.size-request{padding:14px;background:#faf8f5;color:#222;border:1px solid 
 .guide-inline-link{display:inline-block;font-size:12px;margin-top:16px;border-bottom:1px solid #8f8374;line-height:2}footer{gap:20px;flex-wrap:wrap}@media(max-width:1000px){header nav{display:none}.tools .menu-button{display:inline-block}}
 </style>
 <link rel="stylesheet" href="request-flow.css">
-<header><div class="tools"><button aria-label="جستجو" id="searchToggle">⌕</button><button class="bag-button" id="basketOpen" aria-label="سبد انتخاب‌ها، ۰ مورد"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 7h14l1 14H4L5 7Z"/><path d="M8 8V6a4 4 0 0 1 8 0v2"/></svg><span class="basket-count" id="basketCount">۰</span></button><button class="menu-button" id="menuOpen" aria-label="بازکردن منو">☰</button><button aria-label="راهنمای درخواست" id="guide">?</button></div><nav><a href="#">خانه</a><a href="#shop">فروشگاه</a><a href="#collection">کالکشن</a><a href="#visit">خرید حضوری</a><a href="guide.html">راهنمای خرید</a></nav><a class="logo" href="#">LORENCE</a></header>
+<link rel="stylesheet" href="editorial.css">
+<a class="skip-link" href="#shop">رفتن به محصولات</a>
+<header class="site-header" id="siteHeader">
+  <nav aria-label="منوی اصلی"><a href="#discover">کالکشن‌ها</a><a href="#shop">فروشگاه</a><a href="guide.html">دربارهٔ لورنس</a><a href="#visit">خرید حضوری</a></nav>
+  <a class="logo" href="#" aria-label="لورنس، صفحهٔ اصلی">LORENCE</a>
+  <div class="tools">
+    <button class="search-button" aria-label="جستجو" id="searchToggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><span class="tool-caption">جستجو</span></button>
+    <button class="bag-button" id="basketOpen" aria-label="سبد انتخاب‌ها، ۰ مورد"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M5 7h14l1 14H4L5 7Z"/><path d="M8 8V6a4 4 0 0 1 8 0v2"/></svg><span class="tool-caption">سبد</span><span class="basket-count" id="basketCount">۰</span></button>
+    <button class="help-button" aria-label="راهنمای درخواست" id="guide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 8a2.6 2.6 0 0 1 5 .8c0 2-2.5 2.1-2.5 4.2m0 3v.1"/></svg></button>
+    <button class="menu-button" id="menuOpen" aria-label="بازکردن منو"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M3 7h18M3 16h18"/></svg></button>
+  </div>
+</header>
 <div class="searchbox"><input id="search" placeholder="جستجوی لباس…" aria-label="جستجوی لباس"></div>
-<main><section class="hero"><div class="photo"><img src="assets/cropped-hoodie-black.png" alt="تن‌خور هودی کراپ مشکی"></div><div class="hero-copy"><span class="eyebrow">THE LORENCE EDIT</span><h1>LORENCE</h1><a class="cta" href="#shop">مشاهدهٔ محصولات <span>↗</span></a></div><div class="hero-count">01 <span>—</span> LORENCE EDIT</div></section>
-<section class="section" id="shop"><div class="categories"><button class="category" data-filter="سویشرت"><div class="round"><img src="assets/quarter-zip-white.png" alt="نیم‌زیپ سفید"></div>سویشرت و هودی</button><button class="category" data-filter="بافت"><div class="round"><img src="assets/knit-pullover-lilac-gray.png" alt="بافت یاسی"></div>بافت</button><button class="category" data-filter="کت"><div class="round"><img src="assets/denim-vest-blue.png" alt="جلیقه جین"></div>کت و جلیقه</button></div><div class="section-head"><div><span class="eyebrow muted">CURATED BY LORENCE</span><h2>منتخب لورنس</h2></div><span class="muted" id="count">۱۰ محصول</span></div><div class="filters"><button class="active" data-filter="همه">همه</button><button data-filter="سویشرت">سویشرت و هودی</button><button data-filter="تیشرت">تیشرت</button><button data-filter="ست">ست</button><button data-filter="بافت">بافت</button><button data-filter="کت">کت و جلیقه</button></div><div class="grid" id="grid"></div><p class="empty">محصولی با این نام پیدا نشد.</p>
-<section class="editorial" id="collection"><div class="editorial-copy"><span class="eyebrow muted">THE PRINT EDIT</span><h2>بامبر<br>طرح پلنگی</h2><button class="cta" id="bomber">کشف جزئیات <span>↗</span></button></div><div class="frame"><img src="assets/charcoal-on-body.png" alt="بامبر طرح پلنگی ذغالی"></div></section></section></main>
-<section class="section visit" id="visit" aria-labelledby="visitTitle"><div><div class="visit-label">VISIT LORENCE</div><h2 id="visitTitle">خرید حضوری از لورنس</h2></div><address>خیابان افسریه، پانزده‌متری دوم<br>حدفاصل خیابان‌های ۳۰ و ۳۱</address></section>
-<footer><span class="logo">LORENCE</span><a href="https://www.instagram.com/lorence.shop/" target="_blank" rel="noopener" dir="ltr">@lorence.shop ↗</a><a href="#visit">آدرس فروشگاه</a><a href="guide.html">راهنمای خرید و ارتباط</a></footer><div class="note">پیش‌نمایش طراحی · تصاویر، پیش‌نمایش بازسازی‌شدهٔ تن‌خور هستند. انتخاب‌ها را به سبد اضافه کنید و متن درخواست را برای فروشگاه بفرستید. پرداخت و تأیید سفارش در گفتگو با فروشگاه انجام می‌شود.</div>
+<main>
+  <section class="hero" aria-labelledby="heroTitle">
+    <div class="photo"><img src="assets/lorence-campaign-hero.png" alt="کمپین تصویری لورنس با لباس مشکی و نور معماری" fetchpriority="high" decoding="async"></div>
+    <div class="hero-copy"><span class="eyebrow">A PERSONAL EXPRESSION</span><h1 id="heroTitle">LORENCE</h1><p>لباس، به سلیقهٔ تو.</p><a class="hero-link" href="#discover">کشف انتخاب‌های لورنس <span aria-hidden="true">⟶</span></a></div>
+    <div class="hero-edition" aria-hidden="true"><span>01</span><span>THE LORENCE EDIT</span></div>
+    <a class="scroll-cue" href="#discover"><span>پایین‌تر، انتخاب توست</span><span aria-hidden="true">↓</span></a>
+    <div class="hero-side" aria-hidden="true">LORENCE / IN FOCUS</div>
+  </section>
+
+  <section class="section discovery" id="discover" aria-labelledby="discoverTitle">
+    <div class="discovery-head" data-reveal><div><span class="eyebrow muted">DISCOVER THE COLLECTION</span><h2 id="discoverTitle">از کجا شروع می‌کنی؟</h2></div><span class="section-index" aria-hidden="true">01 / COLLECTIONS</span></div>
+    <div class="categories" data-reveal>
+      <button type="button" class="category" data-filter="سویشرت" aria-label="دیدن سویشرت و هودی"><span class="round"><img src="assets/quarter-zip-white.png" alt="نیم‌زیپ سفید" loading="lazy"></span><span class="category-caption"><span>سویشرت و هودی</span><span aria-hidden="true">↗</span></span></button>
+      <button type="button" class="category" data-filter="کت" aria-label="دیدن کت و جلیقه"><span class="round"><img src="assets/denim-vest-blue.png" alt="جلیقه جین" loading="lazy"></span><span class="category-caption"><span>کت و جلیقه</span><span aria-hidden="true">↗</span></span></button>
+      <button type="button" class="category" data-filter="ست" aria-label="دیدن ست‌ها"><span class="round full"><img src="assets/h-set-clean-black.png" alt="ست کژوال طرح H با شلوار مشکی" loading="lazy"></span><span class="category-caption"><span>ست‌های کژوال</span><span aria-hidden="true">↗</span></span></button>
+      <button type="button" class="category" data-filter="بافت" aria-label="دیدن بافت‌ها"><span class="round"><img src="assets/knit-pullover-lilac-gray.png" alt="بافت یقه گرد یاسی" loading="lazy"></span><span class="category-caption"><span>بافت</span><span aria-hidden="true">↗</span></span></button>
+    </div>
+  </section>
+
+  <section class="story-section" aria-labelledby="storyTitle" data-reveal>
+    <figure class="story-photo"><img src="assets/lorence-campaign-story.png" alt="قاب مجله‌ای از استایل لورنس" loading="lazy" decoding="async"><figcaption>THE ART OF YOUR EVERYDAY</figcaption></figure>
+    <div class="story-copy"><span class="eyebrow muted">THE LORENCE POINT OF VIEW</span><h2 id="storyTitle">کمتر،<br>اما با سلیقهٔ خودت.</h2><p>از یک بافت آرام تا جزئیات یک بامبر؛<br>لورنس را با انتخاب‌های خودت ببین.</p><a class="text-link" href="guide.html">آشنایی با لورنس <span aria-hidden="true">⟵</span></a></div>
+  </section>
+
+  <section class="section product-section" id="shop" aria-labelledby="shopTitle">
+    <div class="section-head" data-reveal><div><span class="eyebrow muted">SELECTED BY LORENCE</span><h2 id="shopTitle">انتخاب‌های لورنس</h2></div><span class="muted" id="count">۱۰ محصول</span></div>
+    <div class="filters" aria-label="دسته‌بندی محصولات"><button class="active" data-filter="همه">همهٔ انتخاب‌ها</button><button data-filter="سویشرت">سویشرت و هودی</button><button data-filter="تیشرت">تیشرت</button><button data-filter="ست">ست</button><button data-filter="بافت">بافت</button><button data-filter="کت">کت و جلیقه</button></div>
+    <div class="grid" id="grid"></div><p class="empty">محصولی با این نام پیدا نشد.</p>
+  </section>
+
+  <section class="editorial" id="collection" aria-labelledby="printTitle" data-reveal><div class="editorial-copy"><span class="eyebrow muted">THE PRINT EDIT / 02</span><h2 id="printTitle">وقتی جزئیات<br>حرف می‌زنند.</h2><p>بامبر طرح پلنگی، در سه ترکیب رنگ.<br>رنگ و نمای دلخواهت را از نزدیک ببین.</p><button class="text-link" id="bomber">کشف بامبر پلنگی <span aria-hidden="true">⟵</span></button></div><div class="frame"><img src="assets/charcoal-on-body.png" alt="بامبر طرح پلنگی ذغالی" loading="lazy"><span class="photo-index" aria-hidden="true">LORENCE / DETAILS</span></div></section>
+
+  <section class="section collection-strip" aria-labelledby="looksTitle" data-reveal>
+    <div class="strip-title"><span class="eyebrow muted">THE LOOKS</span><h2 id="looksTitle">از نگاهِ<br>لورنس.</h2><a class="text-link" href="#shop">همهٔ انتخاب‌ها <span aria-hidden="true">⟵</span></a></div>
+    <div class="looks">
+      <a class="look" data-editorial-product="crop-imported" href="?product=crop-imported&amp;color=%D8%B1%D9%88%D8%B4%D9%86"><figure><img src="assets/crop-clean-front.png" alt="دورس کراپ وارداتی روشن" loading="lazy"></figure><span>دورس کراپ <span aria-hidden="true">↗</span></span></a>
+      <a class="look" data-editorial-product="makan-longsleeve" href="?product=makan-longsleeve&amp;color=%D9%85%D8%B4%DA%A9%DB%8C"><figure><img src="assets/makan-clean-front.png" alt="تیشرت لانگ‌اسلیو ماکان مشکی" loading="lazy"></figure><span>لانگ‌اسلیو ماکان <span aria-hidden="true">↗</span></span></a>
+      <a class="look" data-editorial-product="tree-jacket" href="?product=tree-jacket&amp;color=%D8%B1%D9%88%D8%B4%D9%86"><figure><img src="assets/tree-clean-back.png" alt="نمای پشت جکت طرح درخت" loading="lazy"></figure><span>جکت طرح درخت <span aria-hidden="true">↗</span></span></a>
+      <a class="look" data-editorial-product="h-set" href="?product=h-set&amp;color=%D8%B4%D9%84%D9%88%D8%A7%D8%B1%20%D8%B3%D9%81%DB%8C%D8%AF"><figure><img src="assets/h-set-clean-white.png" alt="ست کژوال طرح H با شلوار سفید" loading="lazy"></figure><span>ست کژوال H <span aria-hidden="true">↗</span></span></a>
+    </div>
+  </section>
+
+  <section class="section visit" id="visit" aria-labelledby="visitTitle"><div><div class="visit-label">VISIT LORENCE</div><h2 id="visitTitle">از نزدیک انتخاب کن.</h2></div><div class="visit-info"><address>خیابان افسریه، پانزده‌متری دوم<br>حدفاصل خیابان‌های ۳۰ و ۳۱</address><a class="text-link" href="https://wa.me/989102453713" target="_blank" rel="noopener">هماهنگی در واتساپ <span aria-hidden="true">↗</span></a></div></section>
+</main>
+<footer class="site-footer">
+  <div class="footer-brand"><a class="logo" href="#">LORENCE</a><p>لباس، به سلیقهٔ تو.</p></div>
+  <div class="footer-column"><span class="footer-label">خرید از لورنس</span><a href="#shop">فروشگاه</a><a href="guide.html">راهنمای خرید و ارتباط</a><a href="#visit">خرید حضوری</a></div>
+  <div class="footer-column"><span class="footer-label">در ارتباط بمانیم</span><a href="https://www.instagram.com/lorence.shop/" target="_blank" rel="noopener">اینستاگرام <span dir="ltr">@lorence.shop ↗</span></a><a href="https://wa.me/989102453713" target="_blank" rel="noopener">واتساپ <span dir="ltr">۰۹۱۰۲۴۵۳۷۱۳ ↗</span></a></div>
+  <div class="footer-bottom"><span dir="ltr">© LORENCE</span><span>خرید آنلاین و حضوری</span><a href="#">بازگشت به بالا ↑</a></div>
+</footer>
+<div class="note">تصاویر، پیش‌نمایش بازسازی‌شدهٔ تن‌خور هستند. موجودی، جزئیات لباس و تأیید نهایی سفارش را در گفتگو با فروشگاه هماهنگ کنید.</div>
 <dialog id="product"><button class="close" aria-label="بستن">×</button><div class="detail"><div><div class="mainpic"><img id="detailImage" alt=""></div><div class="thumbs"></div><div class="gallery-controls"><button id="previous" aria-label="تصویر قبلی">→</button><span id="position" class="muted"></span><button id="next" aria-label="تصویر بعدی">←</button></div></div><div class="detail-info"><span class="eyebrow muted">LORENCE / COLLECTION</span><h2 id="productTitle"></h2><p id="productPrice">قیمت: — تومان</p><p id="productDescription"></p><div class="colors"></div><p id="colorLabel"></p><label class="request-label" for="requestedSize">سایز موردنظر (اختیاری)</label><input class="size-request" id="requestedSize" maxlength="40" placeholder="مثلاً اندازهٔ دلخواه یا راهنمایی برای سایز"><select class="size-request" id="requestedSizeOptions" hidden aria-label="سایز موردنظر"></select><p id="productStock" class="request-help"></p><p class="request-help">سایز، قیمت نهایی و موجودی هنگام گفتگو با فروشگاه تأیید می‌شوند.</p><button class="add-request" id="addRequest">افزودن به سبد انتخاب‌ها</button><button class="view-basket" id="viewBasket">مشاهدهٔ سبد انتخاب‌ها</button><button class="view-basket" id="copyProductLink">کپی لینک این محصول</button><p id="productBasketStatus" role="status" aria-live="polite"></p><p class="preview-note" id="productPreviewNote"></p><details><summary>راهنمای اندازه</summary><p>برای انتخاب سایز، متن درخواست را برای فروشگاه بفرستید و اندازه‌های دقیق لباس را بپرسید.</p></details></div></div></dialog>
 
 <dialog id="basketDialog" class="basket-dialog" aria-labelledby="basketTitle"><button class="close" id="basketClose" aria-label="بستن سبد">×</button><h2 id="basketTitle">سبد انتخاب‌های شما</h2><p class="basket-intro">متن درخواست را آماده کنید و برای فروشگاه بفرستید. انتخاب کالا به معنی تأیید موجودی یا ثبت سفارش نیست.</p><div id="basketItems"></div><div id="basketSummary" class="basket-summary" hidden></div><div id="basketActions" class="basket-actions" hidden><button class="primary" id="completeRequest">تکمیل درخواست خرید</button><button id="copyRequest">کپی سریع انتخاب‌ها</button></div><p id="basketStatus" class="basket-status" role="status" aria-live="polite"></p><div class="manual-copy" id="manualCopy" hidden><label for="requestText">متن زیر را انتخاب و کپی کنید:</label><textarea id="requestText" readonly></textarea></div><details class="order-guide" id="requestGuide"><summary>چطور درخواست بدهم؟</summary><ol><li>لباس، رنگ و تعداد موردنظر را انتخاب کنید.</li><li>برای افزودن مشخصات و روش تحویل، «تکمیل درخواست خرید» را بزنید؛ سپس متن آماده را کپی کنید.</li><li>قیمت نهایی، سایز، موجودی و روش تحویل را با فروشگاه نهایی کنید.</li></ol><a class="guide-inline-link" href="guide.html">راهنمای کامل خرید و ارتباط ↗</a></details></dialog>
@@ -162,4 +219,5 @@ document.querySelector('#menuOpen').onclick=()=>mobileMenu.showModal();document.
 window.addEventListener('storage',e=>{if(e.key!==basketStoreKey)return;try{basket=sanitizeBasket(JSON.parse(e.newValue||'[]'));renderBasket()}catch{}});renderBasket();openSharedProduct();
 </script>
 <script src="request-flow.js"></script>
+<script src="editorial.js"></script>
 </html>

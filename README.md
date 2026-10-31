@@ -17,6 +17,12 @@ Open `index.html` from the prepared local bundle to inspect the storefront. Keep
 
 The basket prepares an inquiry. It does not record an order on a server, reserve inventory, confirm payment, or send a message automatically. Online payment and an order-management backend are not implemented.
 
+## Editorial visual design
+
+The storefront and shopping guide share a cinematic charcoal-and-ivory direction inspired by the supplied fashion reference: large campaign photography, serif Lorence wordmarks, rectangular category photography, asymmetric story sections, and a compact look collection. Two additional synthetic campaign images complement the existing product catalog; product data and galleries remain independent of them.
+
+Vazirmatn and Cormorant Garamond are self-hosted in `assets/fonts/`, with their OFL licenses. Sticky-header, focus, hover, and scroll-reveal details support the layout; reduced-motion settings keep content visible without animation.
+
 ## Completing an inquiry
 
 From the basket, “تکمیل درخواست خرید” opens a form with optional name, phone number, and a note. The customer can leave the delivery method for discussion, choose in-person shopping, or request shipping. A destination city is required only for shipping; no home address, shipping rate, or delivery availability is assumed. In-person shopping shows the supplied store address.
@@ -46,7 +52,7 @@ The GitHub repository is `RanaRanaie/lorence-shop`. Cloudflare Pages publishes i
 - Build command: leave blank
 - Build output directory: `public`
 
-The web bundle uses 19 WebP catalog images, about 2.8 MB total, with the source dimensions preserved. Source screenshots and internal generation notes are excluded from `public/`. Keep the catalog data's image filenames consistent with the asset format in the release bundle.
+The web bundle uses 21 WebP images, about 3 MB total, with the source dimensions preserved. Source screenshots and internal generation notes are excluded from `public/`. Keep the catalog data's image filenames consistent with the asset format in the release bundle.
 
 Cloudflare deployment success was verified. The original publishing connection timed out when opening the public pages.dev URL, so public rendering from that connection was not confirmed.
 
