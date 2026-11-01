@@ -122,6 +122,13 @@ button:focus-visible,a:focus-visible,input:focus-visible,summary:focus-visible,s
 .note{background:#141513;color:#6e7766;border-top:0;padding:0 var(--gutter) 23px;text-align:right;font-size:9px;line-height:2}
 dialog{font-family:var(--font-fa);background:var(--paper);box-shadow:0 28px 100px #0004}
 dialog::backdrop{background:#10110fe0;backdrop-filter:blur(7px)}
+.dialog-toolbar{position:sticky;top:0;height:0;z-index:10}
+.dialog-toolbar .close{box-shadow:0 1px 10px #0002}
+.basket-dialog{padding:0!important}
+.basket-content{padding:52px 36px 30px}
+.basket-feedback{font-size:12px;line-height:2.2;padding:12px 15px;margin:0 0 18px;background:#e5eadd;color:#343f2a;border:1px solid #ccd5be}
+.basket-feedback:empty{display:none}
+@media(max-width:760px){.basket-content{padding:51px 25px 25px}}
 .detail-info{padding:70px 40px 40px}.detail h2{font-size:27px;line-height:1.9;letter-spacing:-.8px;margin:22px 0 13px}
 .detail-info p{font-size:12px;line-height:2.3;color:#7b7f70}.detail-info .eyebrow{font-size:8px;letter-spacing:2.5px}
 .detail-info #productPrice{color:#2f342c;font-size:14px;margin-bottom:21px}
