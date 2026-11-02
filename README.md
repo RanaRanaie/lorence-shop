@@ -11,6 +11,8 @@ Open `index.html` from the prepared local bundle to inspect the storefront. Keep
 - Ten products with search, category filters, and separate galleries by color.
 - Inquiry basket with quantities, requested sizes, browser persistence, and a copyable request summary.
 - Shareable links identify the selected product and color.
+- Unknown prices explicitly show استعلام قیمت. Stock and size guidance follow the selected color; a sold-out card label appears only when all variant stocks are confirmed zero.
+- Product dialogs are named for assistive technology and reopen at the top. The product, basket, and request close controls remain visible while scrolling.
 - WhatsApp handoff is configured for the supplied store business number, `+989102453713`. After preparing the full request, the WhatsApp link opens the store conversation with that text filled in; the customer sends it themselves.
 - Store address for in-person shopping: خیابان افسریه، پانزده‌متری دوم، حدفاصل خیابان‌های ۳۰ و ۳۱.
 - `guide.html` explains the purchase steps, contact options, and common shopping questions. It is linked from the storefront navigation, footer, and basket help.
