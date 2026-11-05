@@ -48,12 +48,4 @@
     menuButton.addEventListener('click', () => menuButton.setAttribute('aria-expanded', String(menu.open)));
     menu.addEventListener('close', () => menuButton.setAttribute('aria-expanded', 'false'));
   }
-  const searchButton = document.querySelector('#searchToggle');
-  const searchBox = document.querySelector('.searchbox');
-  if (searchButton && searchBox) {
-    searchBox.id = searchBox.id || 'storeSearch';
-    searchButton.setAttribute('aria-controls', searchBox.id);
-    searchButton.setAttribute('aria-expanded', String(searchBox.classList.contains('open')));
-    searchButton.addEventListener('click', () => searchButton.setAttribute('aria-expanded', String(searchBox.classList.contains('open'))));
-  }
 })();
