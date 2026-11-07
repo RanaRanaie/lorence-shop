@@ -21,6 +21,7 @@ select.size-request{padding:14px;background:#faf8f5;color:#222;border:1px solid 
   <a class="logo" href="#" aria-label="لورنس، صفحهٔ اصلی">LORENCE</a>
   <div class="tools">
     <button class="search-button" aria-label="جستجو" id="searchToggle" aria-controls="shopSearch"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><span class="tool-caption">جستجو</span></button>
+    <button type="button" class="favorites-button" id="favoritesOpen" aria-label="دیدن علاقه‌مندی‌ها" aria-controls="grid"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M20.8 4.6a5.6 5.6 0 0 0-7.9 0l-.9.9-.9-.9a5.6 5.6 0 0 0-7.9 7.9L12 21l8.8-8.5a5.6 5.6 0 0 0 0-7.9Z"/></svg><span class="tool-caption">علاقه‌مندی‌ها</span><span id="favoritesCount" class="favorites-count" aria-hidden="true" hidden></span></button>
     <button class="bag-button" id="basketOpen" aria-label="سبد انتخاب‌ها، ۰ مورد"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M5 7h14l1 14H4L5 7Z"/><path d="M8 8V6a4 4 0 0 1 8 0v2"/></svg><span class="tool-caption">سبد</span><span class="basket-count" id="basketCount">۰</span></button>
     <button class="help-button" aria-label="راهنمای درخواست" id="guide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 8a2.6 2.6 0 0 1 5 .8c0 2-2.5 2.1-2.5 4.2m0 3v.1"/></svg></button>
     <button class="menu-button" id="menuOpen" aria-label="بازکردن منو"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M3 7h18M3 16h18"/></svg></button>
@@ -71,6 +72,12 @@ select.size-request{padding:14px;background:#faf8f5;color:#222;border:1px solid 
       </div>
     </div>
     <div class="filters" role="group" aria-label="دسته‌بندی محصولات"><button type="button" class="active" data-filter="همه" aria-pressed="true">همهٔ انتخاب‌ها</button><button type="button" data-filter="سویشرت" aria-pressed="false">سویشرت و هودی</button><button type="button" data-filter="تیشرت" aria-pressed="false">تیشرت</button><button type="button" data-filter="ست" aria-pressed="false">ست</button><button type="button" data-filter="بافت" aria-pressed="false">بافت</button><button type="button" data-filter="کت" aria-pressed="false">کت و جلیقه</button></div>
+    <div class="favorites-view" id="favoritesView">
+      <button type="button" id="favoritesOnly" class="favorites-filter" aria-pressed="false" aria-controls="grid"><span aria-hidden="true">♡</span> فقط علاقه‌مندی‌ها <span id="favoritesTotal">۰</span></button>
+      <p id="favoritesContext" hidden>انتخاب‌های ذخیره‌شده در این مرورگر</p>
+    </div>
+    <p id="favoritesStatus" class="visually-hidden" role="status" aria-live="polite"></p>
+    <p id="favoriteStorageNotice" class="favorites-notice" hidden>ذخیرهٔ این مرورگر در دسترس نیست. انتخاب‌ها فعلاً در همین صفحه نگه‌داری می‌شوند.</p>
     <div class="grid" id="grid"></div>
     <div class="shop-empty" id="shopEmpty" hidden>
       <p class="empty">محصولی با این جست‌وجو یا دسته پیدا نشد.</p>
@@ -99,7 +106,7 @@ select.size-request{padding:14px;background:#faf8f5;color:#222;border:1px solid 
   <div class="footer-bottom"><span dir="ltr">© LORENCE</span><span>خرید آنلاین و حضوری</span><a href="#">بازگشت به بالا ↑</a></div>
 </footer>
 <div class="note">تصاویر، پیش‌نمایش بازسازی‌شدهٔ تن‌خور هستند. موجودی، جزئیات لباس و تأیید نهایی سفارش را در گفتگو با فروشگاه هماهنگ کنید.</div>
-<dialog id="product" aria-labelledby="productTitle"><div class="dialog-toolbar"><button class="close" aria-label="بستن">×</button></div><div class="detail"><div><div class="mainpic"><img id="detailImage" alt=""></div><div class="thumbs"></div><div class="gallery-controls"><button id="previous" aria-label="تصویر قبلی">→</button><span id="position" class="muted"></span><button id="next" aria-label="تصویر بعدی">←</button></div></div><div class="detail-info"><span class="eyebrow muted">LORENCE / COLLECTION</span><h2 id="productTitle"></h2><p id="productPrice">استعلام قیمت</p><p id="productDescription"></p><div class="colors"></div><p id="colorLabel"></p><label class="request-label" for="requestedSize">سایز موردنظر (اختیاری)</label><input class="size-request" id="requestedSize" aria-describedby="productSizeHelp" maxlength="40" placeholder="مثلاً اندازهٔ دلخواه یا راهنمایی برای سایز"><select class="size-request" id="requestedSizeOptions" hidden aria-label="سایز موردنظر" aria-describedby="productSizeHelp"></select><p id="productSizeHelp" class="size-help"></p><p id="productStock" class="request-help stock-state" role="status" aria-live="polite"></p><p class="request-help">سایز، قیمت نهایی و موجودی هنگام گفتگو با فروشگاه تأیید می‌شوند.</p><button class="add-request" id="addRequest">افزودن به سبد انتخاب‌ها</button><button class="view-basket" id="viewBasket">مشاهدهٔ سبد انتخاب‌ها</button><button class="view-basket" id="copyProductLink">کپی لینک این محصول</button><p id="productBasketStatus" role="status" aria-live="polite"></p><p class="preview-note" id="productPreviewNote"></p><details><summary>راهنمای اندازه</summary><p>برای انتخاب سایز، متن درخواست را برای فروشگاه بفرستید و اندازه‌های دقیق لباس را بپرسید.</p></details></div></div></dialog>
+<dialog id="product" aria-labelledby="productTitle"><div class="dialog-toolbar"><button class="close" aria-label="بستن">×</button></div><div class="detail"><div><div class="mainpic"><img id="detailImage" alt=""></div><div class="thumbs"></div><div class="gallery-controls"><button id="previous" aria-label="تصویر قبلی">→</button><span id="position" class="muted"></span><button id="next" aria-label="تصویر بعدی">←</button></div></div><div class="detail-info"><span class="eyebrow muted">LORENCE / COLLECTION</span><h2 id="productTitle"></h2><p id="productPrice">استعلام قیمت</p><p id="productDescription"></p><div class="colors"></div><p id="colorLabel"></p><label class="request-label" for="requestedSize">سایز موردنظر (اختیاری)</label><input class="size-request" id="requestedSize" aria-describedby="productSizeHelp" maxlength="40" placeholder="مثلاً اندازهٔ دلخواه یا راهنمایی برای سایز"><select class="size-request" id="requestedSizeOptions" hidden aria-label="سایز موردنظر" aria-describedby="productSizeHelp"></select><p id="productSizeHelp" class="size-help"></p><p id="productStock" class="request-help stock-state" role="status" aria-live="polite"></p><p class="request-help">سایز، قیمت نهایی و موجودی هنگام گفتگو با فروشگاه تأیید می‌شوند.</p><button class="add-request" id="addRequest">افزودن به سبد انتخاب‌ها</button><button class="view-basket" id="viewBasket">مشاهدهٔ سبد انتخاب‌ها</button><button type="button" class="view-basket product-favorite" id="productFavoriteToggle" aria-pressed="false">ذخیره در علاقه‌مندی‌ها</button><button class="view-basket" id="copyProductLink">کپی لینک این محصول</button><p id="productBasketStatus" role="status" aria-live="polite"></p><p class="preview-note" id="productPreviewNote"></p><details><summary>راهنمای اندازه</summary><p>برای انتخاب سایز، متن درخواست را برای فروشگاه بفرستید و اندازه‌های دقیق لباس را بپرسید.</p></details></div></div></dialog>
 
 <dialog id="basketDialog" class="basket-dialog" aria-labelledby="basketTitle"><div class="dialog-toolbar"><button class="close" id="basketClose" aria-label="بستن سبد">×</button></div><div class="basket-content"><p id="basketFeedback" class="basket-feedback" role="status" aria-live="polite"></p><h2 id="basketTitle">سبد انتخاب‌های شما</h2><p class="basket-intro">متن درخواست را آماده کنید و برای فروشگاه بفرستید. انتخاب کالا به معنی تأیید موجودی یا ثبت سفارش نیست.</p><div id="basketItems"></div><div id="basketSummary" class="basket-summary" hidden></div><div id="basketActions" class="basket-actions" hidden><button class="primary" id="completeRequest">تکمیل درخواست خرید</button><button id="copyRequest">کپی سریع انتخاب‌ها</button><button id="continueShopping">ادامهٔ خرید</button></div><p id="basketStatus" class="basket-status" role="status" aria-live="polite"></p><div class="manual-copy" id="manualCopy" hidden><label for="requestText">متن زیر را انتخاب و کپی کنید:</label><textarea id="requestText" readonly></textarea></div><details class="order-guide" id="requestGuide"><summary>چطور درخواست بدهم؟</summary><ol><li>لباس، رنگ و تعداد موردنظر را انتخاب کنید.</li><li>برای افزودن مشخصات و روش تحویل، «تکمیل درخواست خرید» را بزنید؛ سپس متن آماده را کپی کنید.</li><li>قیمت نهایی، سایز، موجودی و روش تحویل را با فروشگاه نهایی کنید.</li></ol><a class="guide-inline-link" href="guide.html">راهنمای کامل خرید و ارتباط ↗</a></details></div></dialog>
 <dialog id="requestDialog" class="request-flow" aria-labelledby="requestTitle">
@@ -152,6 +159,63 @@ const clearSearch = document.querySelector('#clearSearch');
 const shopEmpty = document.querySelector('#shopEmpty');
 const emptyMessage = document.querySelector('.empty');
 const resetFilters = document.querySelector('#resetFilters');
+const favoritesOnlyButton = document.querySelector('#favoritesOnly');
+const favoritesStorageKey = 'lorence-favorites-v1';
+let favoritesOnly = false;
+let favoriteIds = [];
+let favoriteStorageUnavailable = false;
+
+function sanitizeFavorites(raw) {
+  if (!Array.isArray(raw)) return [];
+  const visibleIds = new Set(products.filter(product => product[7].visible).map(product => product[7].id));
+  return [...new Set(raw.slice(0, 100).filter(id => typeof id === 'string' && visibleIds.has(id)))];
+}
+
+try {
+  favoriteIds = sanitizeFavorites(JSON.parse(localStorage.getItem(favoritesStorageKey) || '[]'));
+} catch {
+  favoriteIds = [];
+}
+
+function updateFavoritesUI() {
+  const total = favoriteIds.length.toLocaleString('fa-IR');
+  const count = document.querySelector('#favoritesCount');
+  count.textContent = total;
+  count.hidden = !favoriteIds.length;
+  document.querySelector('#favoritesTotal').textContent = total;
+  document.querySelector('#favoritesOpen').setAttribute('aria-label', 'دیدن علاقه‌مندی‌ها، ' + total + ' لباس');
+  favoritesOnlyButton.setAttribute('aria-pressed', String(favoritesOnly));
+  document.querySelector('#favoritesContext').hidden = !favoritesOnly;
+  document.querySelector('#favoriteStorageNotice').hidden = !favoriteStorageUnavailable;
+  if (activeProduct) {
+    const saved = favoriteIds.includes(activeProduct[7].id);
+    const button = document.querySelector('#productFavoriteToggle');
+    button.setAttribute('aria-pressed', String(saved));
+    button.textContent = saved ? 'حذف از علاقه‌مندی‌ها' : 'ذخیره در علاقه‌مندی‌ها';
+  }
+}
+
+function toggleFavorite(id, origin) {
+  const product = products.find(item => item[7].id === id && item[7].visible);
+  if (!product || catalogLoadError) return;
+  const saved = favoriteIds.includes(id);
+  favoriteIds = saved ? favoriteIds.filter(item => item !== id) : [...favoriteIds, id];
+  try {
+    localStorage.setItem(favoritesStorageKey, JSON.stringify(favoriteIds));
+    favoriteStorageUnavailable = false;
+  } catch {
+    favoriteStorageUnavailable = true;
+  }
+  render();
+  const message = product[0] + (saved ? ' از علاقه‌مندی‌ها حذف شد.' : ' به علاقه‌مندی‌ها اضافه شد.');
+  document.querySelector('#favoritesStatus').textContent = message;
+  if (origin === 'product') {
+    document.querySelector('#productBasketStatus').textContent = message;
+    return;
+  }
+  const button = document.querySelector('[data-favorite-id="' + id + '"]') || favoritesOnlyButton;
+  button.focus({preventScroll: true});
+}
 
 function normalizeSearch(value) {
   return value.normalize('NFKC').toLowerCase()
@@ -166,6 +230,7 @@ function matchingProducts() {
   const terms = normalizeSearch(searchInput.value).split(' ').filter(Boolean);
   const matches = products.filter(product => {
     if (!product[7].visible || (filter !== 'همه' && product[2] !== filter)) return false;
+    if (favoritesOnly && !favoriteIds.includes(product[7].id)) return false;
     if (!terms.length) return true;
     const fields = [product[0], product[2], ...product[7].colors.map(color => color.label)]
       .map(value => normalizeSearch(value).replaceAll(' ', ''));
@@ -182,6 +247,7 @@ function matchingProducts() {
 }
 
 function render() {
+  updateFavoritesUI();
   document.querySelector('#collection').hidden = !catalogState.products.some(product => product.id === 'bomber-leopard' && product.visible);
   if (catalogLoadError) {
     grid.innerHTML = '';
@@ -192,7 +258,8 @@ function render() {
     resetFilters.hidden = true;
     document.querySelector('#shopSearch').hidden = true;
     document.querySelector('.filters').hidden = true;
-    for (const selector of ['#searchToggle', '#basketOpen', '#guide', '#completeRequest', '#addRequest', '#viewBasket', '#copyRequest', '#copyProductLink']) {
+    document.querySelector('#favoritesView').hidden = true;
+    for (const selector of ['#searchToggle', '#favoritesOpen', '#favoritesOnly', '#productFavoriteToggle', '#basketOpen', '#guide', '#completeRequest', '#addRequest', '#viewBasket', '#copyRequest', '#copyProductLink']) {
       document.querySelector(selector).disabled = true;
     }
     document.querySelector('#basketActions').hidden = true;
@@ -200,7 +267,7 @@ function render() {
   }
   const shown = matchingProducts();
   grid.innerHTML = shown.map(product => `
-    <article class="card" tabindex="0" role="button" aria-label="مشاهدهٔ ${htmlText(product[0])}" data-id="${products.indexOf(product)}">
+    <article class="card" data-id="${products.indexOf(product)}">
       <div class="frame ${product[7].clean ? 'clean' : ''}">
         <img loading="lazy" src="assets/${product[1]}" alt="${htmlText(product[0])}" ${product[7].id === 'bomber-leopard' ? 'style="height:100%;top:0"' : ''}>
         <span class="tag">مشاهدهٔ محصول ↗</span>
@@ -211,20 +278,23 @@ function render() {
         <span class="muted">${price(product)}</span>
         <span class="swatches">${product[7].colors.map(color => `<i class="dot" style="--c:${color.hex}"></i>`).join('')}</span>
       </div>
+      <button type="button" class="card-open" aria-label="مشاهدهٔ ${htmlText(product[0])}"></button>
+      <button type="button" class="favorite-button" data-favorite-id="${product[7].id}" aria-pressed="${favoriteIds.includes(product[7].id)}" aria-label="${favoriteIds.includes(product[7].id) ? 'حذف ' : 'ذخیرهٔ '}${htmlText(product[0])}${favoriteIds.includes(product[7].id) ? ' از علاقه‌مندی‌ها' : ' در علاقه‌مندی‌ها'}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M20.8 4.6a5.6 5.6 0 0 0-7.9 0l-.9.9-.9-.9a5.6 5.6 0 0 0-7.9 7.9L12 21l8.8-8.5a5.6 5.6 0 0 0 0-7.9Z"/></svg></button>
     </article>`).join('');
   document.querySelector('#count').textContent = shown.length.toLocaleString('fa-IR') + ' محصول';
   clearSearch.hidden = !searchInput.value;
   shopEmpty.hidden = shown.length > 0;
   const hasVisibleProducts = products.some(product => product[7].visible);
   emptyMessage.textContent = hasVisibleProducts ? 'محصولی با این جست‌وجو یا دسته پیدا نشد.' : 'فعلاً محصولی برای نمایش نیست.';
+  if (favoritesOnly) {
+    emptyMessage.textContent = favoriteIds.length
+      ? 'در علاقه‌مندی‌ها محصولی با این جست‌وجو یا دسته پیدا نشد.'
+      : 'هنوز لباسی ذخیره نکرده‌اید. برای نگه‌داشتن لباس دلخواه، قلب کنار آن را بزنید.';
+  }
   resetFilters.hidden = !hasVisibleProducts;
   document.querySelectorAll('.card').forEach(card => {
-    card.onclick = () => openProduct(Number(card.dataset.id));
-    card.onkeydown = event => {
-      if (event.key !== 'Enter' && event.key !== ' ') return;
-      event.preventDefault();
-      card.click();
-    };
+    card.querySelector('.card-open').onclick = () => openProduct(Number(card.dataset.id));
+    card.querySelector('.favorite-button').onclick = () => toggleFavorite(products[Number(card.dataset.id)][7].id, 'card');
   });
 }
 
@@ -240,7 +310,10 @@ function selectCategory(category) {
 
 document.querySelectorAll('[data-filter]').forEach(button => {
   button.onclick = () => {
-    if (button.classList.contains('category')) searchInput.value = '';
+    if (button.classList.contains('category')) {
+      searchInput.value = '';
+      favoritesOnly = false;
+    }
     selectCategory(button.dataset.filter);
     shop.scrollIntoView({block: 'start'});
   };
@@ -255,6 +328,7 @@ clearSearch.onclick = () => {
 resetFilters.onclick = () => {
   searchInput.value = '';
   sortProducts.value = 'featured';
+  favoritesOnly = false;
   selectCategory('همه');
   shopTitle.focus({preventScroll: true});
   shop.scrollIntoView({block: 'start'});
@@ -267,6 +341,20 @@ document.querySelector('#shopSearchForm').onsubmit = event => {
   event.preventDefault();
   shopTitle.focus({preventScroll: true});
   shop.scrollIntoView({block: 'start'});
+};
+favoritesOnlyButton.onclick = () => {
+  favoritesOnly = !favoritesOnly;
+  render();
+};
+document.querySelector('#favoritesOpen').onclick = () => {
+  favoritesOnly = true;
+  searchInput.value = '';
+  selectCategory('همه');
+  shop.scrollIntoView({block: 'start', behavior: 'instant'});
+  shopTitle.focus({preventScroll: true});
+};
+document.querySelector('#productFavoriteToggle').onclick = () => {
+  if (activeProduct) toggleFavorite(activeProduct[7].id, 'product');
 };
 const imageView={
  'makan-clean-front.png':'نمای جلو', 'makan-clean-detail.png':'جزئیات چاپ و بافت',
@@ -292,6 +380,7 @@ function openProduct(id){
  let colors=p[7]?.colors;
  if(colors){colors.forEach((c,i)=>{const b=document.createElement('button');b.type='button';b.style.setProperty('--c',c.hex);b.setAttribute('aria-label',c.label);b.onclick=()=>{document.querySelectorAll('.colors button').forEach(t=>{t.classList.remove('selected');t.setAttribute('aria-pressed','false')});b.classList.add('selected');b.setAttribute('aria-pressed','true');activeColorLabel=c.label;document.querySelector('#colorLabel').textContent=(p[7]?.id==='h-set'?'ترکیب تصویر: ':'رنگ: ')+c.label+(p[7]?.id==='bomber-leopard'?' (نام موقت)':'');setGallery(c.files);updateProductAvailability()};document.querySelector('.colors').append(b);if(i===0)b.click()})}
  else setGallery(p[5]||[p[1]]);
+ updateFavoritesUI();
  if(!dialog.open)dialog.showModal();
  dialog.scrollTop=0;
 }
@@ -369,6 +458,15 @@ function openSharedProduct(){const selection=readProductSelection(window.locatio
 window.addEventListener('popstate',openSharedProduct);
 
 document.querySelector('#menuOpen').onclick=()=>mobileMenu.showModal();document.querySelector('#menuClose').onclick=()=>mobileMenu.close();document.querySelectorAll('#mobileMenu a').forEach(a=>a.addEventListener('click',()=>mobileMenu.close()));document.querySelector('#guide').onclick=()=>{openBasket();document.querySelector('#requestGuide').open=true};
+window.addEventListener('storage', event => {
+  if (event.key !== favoritesStorageKey && event.key !== null) return;
+  try {
+    favoriteIds = sanitizeFavorites(JSON.parse(event.newValue || '[]'));
+  } catch {
+    favoriteIds = [];
+  }
+  render();
+});
 window.addEventListener('storage',e=>{if(e.key!==basketStoreKey)return;try{basket=sanitizeBasket(JSON.parse(e.newValue||'[]'));renderBasket()}catch{}});renderBasket();openSharedProduct();
 </script>
 <script src="request-flow.js"></script>
