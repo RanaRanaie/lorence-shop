@@ -28,6 +28,18 @@
     const restoredIds = new Set(restored.products.map(product => product.id));
     const additions = baseline.products.filter(product => !restoredIds.has(product.id));
     restored.products.push(...additions.map(clone));
+    const currentTrousers = baseline.products.find(product => product.id === 'drawstring-trousers');
+    const restoredTrousers = restored.products.find(product => product.id === 'drawstring-trousers');
+    if (currentTrousers && restoredTrousers) {
+      const currentPhotos = currentTrousers.variants.flatMap(variant => variant.images);
+      for (const variant of restoredTrousers.variants) {
+        variant.images = variant.images.map(filename => {
+          const oldPhoto = filename.match(/^drawstring-trousers-(light|dark)\.(?:png|webp)$/);
+          if (!oldPhoto) return filename;
+          return currentPhotos.find(photo => photo.startsWith('drawstring-trousers-' + oldPhoto[1] + '-flatlay.')) || filename;
+        });
+      }
+    }
     return validateCatalog(restored);
   }
 
