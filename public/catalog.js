@@ -255,7 +255,7 @@ const lorenceCatalog = {
           "label": "روشن",
           "hex": "#c9cbcd",
           "images": [
-            "drawstring-trousers-light-flatlay.webp"
+            "drawstring-trousers-light-editorial-v2.webp"
           ],
           "sizes": [],
           "stock": null
@@ -264,7 +264,7 @@ const lorenceCatalog = {
           "label": "تیره",
           "hex": "#363a3d",
           "images": [
-            "drawstring-trousers-dark-flatlay.webp"
+            "drawstring-trousers-dark-editorial-v2.webp"
           ],
           "sizes": [],
           "stock": null

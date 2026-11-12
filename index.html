@@ -357,7 +357,7 @@ document.querySelector('#productFavoriteToggle').onclick = () => {
   if (activeProduct) toggleFavorite(activeProduct[7].id, 'product');
 };
 const imageView={
- 'drawstring-trousers-light-flatlay.jpg':'چیدمان رنگ روشن', 'drawstring-trousers-dark-flatlay.jpg':'چیدمان رنگ تیره',
+ 'drawstring-trousers-light-editorial-v2.png':'چیدمان رنگ روشن', 'drawstring-trousers-dark-editorial-v2.png':'چیدمان رنگ تیره',
  'makan-clean-front.png':'نمای جلو', 'makan-clean-detail.png':'جزئیات چاپ و بافت',
  'crop-clean-front.png':'نمای جلو', 'crop-clean-detail.png':'جزئیات لباس',
  'tree-clean-front.png':'نمای جلو', 'tree-clean-back.png':'نمای پشت',
@@ -377,7 +377,7 @@ function openProduct(id){
  document.querySelector('.mainpic').classList.toggle('bomber',p[7]?.id==='bomber-leopard');
  document.querySelector('.colors').innerHTML='';document.querySelector('#colorLabel').textContent='';
  const previewNote=document.querySelector('#productPreviewNote');
- previewNote.textContent=p[7]?.id==='drawstring-trousers'?'تصویر چیدمان شلوار در رنگ انتخابی.':'تصاویر، پیش‌نمایش بازسازی‌شدهٔ تن‌خور بر اساس مرجع لباس هستند.';
+ previewNote.textContent=p[7]?.id==='drawstring-trousers'?'تصویر بازسازی‌شدهٔ چیدمان شلوار در رنگ انتخابی.':'تصاویر، پیش‌نمایش بازسازی‌شدهٔ تن‌خور بر اساس مرجع لباس هستند.';
  let colors=p[7]?.colors;
  if(colors){colors.forEach((c,i)=>{const b=document.createElement('button');b.type='button';b.style.setProperty('--c',c.hex);b.setAttribute('aria-label',c.label);b.onclick=()=>{document.querySelectorAll('.colors button').forEach(t=>{t.classList.remove('selected');t.setAttribute('aria-pressed','false')});b.classList.add('selected');b.setAttribute('aria-pressed','true');activeColorLabel=c.label;document.querySelector('#colorLabel').textContent=(p[7]?.id==='h-set'?'ترکیب تصویر: ':'رنگ: ')+c.label+(p[7]?.id==='bomber-leopard'?' (نام موقت)':'');setGallery(c.files);updateProductAvailability()};document.querySelector('.colors').append(b);if(i===0)b.click()})}
  else setGallery(p[5]||[p[1]]);

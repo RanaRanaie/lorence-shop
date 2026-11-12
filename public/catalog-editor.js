@@ -34,9 +34,9 @@
       const currentPhotos = currentTrousers.variants.flatMap(variant => variant.images);
       for (const variant of restoredTrousers.variants) {
         variant.images = variant.images.map(filename => {
-          const oldPhoto = filename.match(/^drawstring-trousers-(light|dark)\.(?:png|webp)$/);
+          const oldPhoto = filename.match(/^drawstring-trousers-(light|dark)(?:-flatlay)?\.(?:png|jpe?g|webp)$/);
           if (!oldPhoto) return filename;
-          return currentPhotos.find(photo => photo.startsWith('drawstring-trousers-' + oldPhoto[1] + '-flatlay.')) || filename;
+          return currentPhotos.find(photo => photo.startsWith('drawstring-trousers-' + oldPhoto[1] + '-')) || filename;
         });
       }
     }
