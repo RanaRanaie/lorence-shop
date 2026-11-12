@@ -241,6 +241,35 @@ const lorenceCatalog = {
           "stock": null
         }
       ]
+    },
+    {
+      "id": "drawstring-trousers",
+      "name": "شلوار کمرکش بنددار",
+      "category": "شلوار",
+      "description": "کمر کشی با بند تنظیم و دمپای کشی؛ در دو رنگ روشن و تیره. نام دقیق رنگ، سایز و موجودی هنگام گفتگو با فروشگاه تأیید می‌شود.",
+      "priceToman": 3200000,
+      "visible": true,
+      "frame": "full",
+      "variants": [
+        {
+          "label": "روشن",
+          "hex": "#c9cbcd",
+          "images": [
+            "drawstring-trousers-light.webp"
+          ],
+          "sizes": [],
+          "stock": null
+        },
+        {
+          "label": "تیره",
+          "hex": "#363a3d",
+          "images": [
+            "drawstring-trousers-dark.webp"
+          ],
+          "sizes": [],
+          "stock": null
+        }
+      ]
     }
   ]
 };

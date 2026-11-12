@@ -23,6 +23,14 @@
   }
   const expandHex = hex => /^#[a-f\d]{3}$/i.test(hex) ? '#' + [...hex.slice(1)].map(c => c + c).join('') : hex;
 
+  function includeCurrentProducts(catalog) {
+    const restored = validateCatalog(catalog);
+    const restoredIds = new Set(restored.products.map(product => product.id));
+    const additions = baseline.products.filter(product => !restoredIds.has(product.id));
+    restored.products.push(...additions.map(clone));
+    return validateCatalog(restored);
+  }
+
   function persist() {
     try {
       localStorage.setItem(storageKey, JSON.stringify({ savedAt: new Date().toISOString(), catalog: draft }));
@@ -151,7 +159,7 @@
     draft = clone(baseline);
     try {
       const saved = JSON.parse(localStorage.getItem(storageKey) || 'null');
-      if (saved && saved.catalog) { draft = validateCatalog(saved.catalog); recoveringDraft = true; }
+      if (saved && saved.catalog) { draft = includeCurrentProducts(saved.catalog); recoveringDraft = true; }
     } catch {
       message('پیش‌نویس قبلی قابل خواندن نبود؛ کاتالوگ فعلی فروشگاه باز شد. می‌توانید پشتیبان JSON را باز کنید.', true);
     }
@@ -227,7 +235,7 @@
     if (!file) return;
     try {
       if (file.size > 2000000) throw new Error('اندازهٔ فایل پشتیبان بیش از حد مجاز است.');
-      const imported = validateCatalog(JSON.parse(await file.text()));
+      const imported = includeCurrentProducts(JSON.parse(await file.text()));
       markUndo();
       draft = imported;
       productIndex = 0;

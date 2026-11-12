@@ -1,7 +1,7 @@
 'use strict';
 
 function validateCatalog(input) {
-  const categories = ['سویشرت', 'تیشرت', 'ست', 'بافت', 'کت'];
+  const categories = ['سویشرت', 'تیشرت', 'ست', 'بافت', 'کت', 'شلوار'];
   const fail = message => { throw new Error(message); };
   const object = value => value !== null && typeof value === 'object' && !Array.isArray(value);
   const text = (value, label, max, allowEmpty = false) => {

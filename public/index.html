@@ -52,7 +52,7 @@ select.size-request{padding:14px;background:#faf8f5;color:#222;border:1px solid 
   </section>
 
   <section class="section product-section" id="shop" aria-labelledby="shopTitle">
-    <div class="section-head" data-reveal><div><span class="eyebrow muted">SELECTED BY LORENCE</span><h2 id="shopTitle" tabindex="-1">انتخاب‌های لورنس</h2></div><span class="muted" id="count" role="status" aria-atomic="true">۱۰ محصول</span></div>
+    <div class="section-head" data-reveal><div><span class="eyebrow muted">SELECTED BY LORENCE</span><h2 id="shopTitle" tabindex="-1">انتخاب‌های لورنس</h2></div><span class="muted" id="count" role="status" aria-atomic="true">۱۱ محصول</span></div>
     <div class="shop-controls" id="shopSearch">
       <form id="shopSearchForm" role="search" aria-label="جست‌وجوی محصولات">
         <label class="shop-control-label" for="search">جست‌وجوی لباس</label>
@@ -71,7 +71,7 @@ select.size-request{padding:14px;background:#faf8f5;color:#222;border:1px solid 
         </select>
       </div>
     </div>
-    <div class="filters" role="group" aria-label="دسته‌بندی محصولات"><button type="button" class="active" data-filter="همه" aria-pressed="true">همهٔ انتخاب‌ها</button><button type="button" data-filter="سویشرت" aria-pressed="false">سویشرت و هودی</button><button type="button" data-filter="تیشرت" aria-pressed="false">تیشرت</button><button type="button" data-filter="ست" aria-pressed="false">ست</button><button type="button" data-filter="بافت" aria-pressed="false">بافت</button><button type="button" data-filter="کت" aria-pressed="false">کت و جلیقه</button></div>
+    <div class="filters" role="group" aria-label="دسته‌بندی محصولات"><button type="button" class="active" data-filter="همه" aria-pressed="true">همهٔ انتخاب‌ها</button><button type="button" data-filter="سویشرت" aria-pressed="false">سویشرت و هودی</button><button type="button" data-filter="تیشرت" aria-pressed="false">تیشرت</button><button type="button" data-filter="ست" aria-pressed="false">ست</button><button type="button" data-filter="بافت" aria-pressed="false">بافت</button><button type="button" data-filter="کت" aria-pressed="false">کت و جلیقه</button><button type="button" data-filter="شلوار" aria-pressed="false">شلوار</button></div>
     <div class="favorites-view" id="favoritesView">
       <button type="button" id="favoritesOnly" class="favorites-filter" aria-pressed="false" aria-controls="grid"><span aria-hidden="true">♡</span> فقط علاقه‌مندی‌ها <span id="favoritesTotal">۰</span></button>
       <p id="favoritesContext" hidden>انتخاب‌های ذخیره‌شده در این مرورگر</p>
@@ -357,6 +357,7 @@ document.querySelector('#productFavoriteToggle').onclick = () => {
   if (activeProduct) toggleFavorite(activeProduct[7].id, 'product');
 };
 const imageView={
+ 'drawstring-trousers-light.webp':'نمای تن‌خور رنگ روشن', 'drawstring-trousers-dark.webp':'نمای تن‌خور رنگ تیره',
  'makan-clean-front.webp':'نمای جلو', 'makan-clean-detail.webp':'جزئیات چاپ و بافت',
  'crop-clean-front.webp':'نمای جلو', 'crop-clean-detail.webp':'جزئیات لباس',
  'tree-clean-front.webp':'نمای جلو', 'tree-clean-back.webp':'نمای پشت',

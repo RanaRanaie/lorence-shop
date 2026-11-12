@@ -8,7 +8,7 @@ Public preview: https://lorence-shop.pages.dev/
 
 Open `index.html` from the prepared local bundle to inspect the storefront. Keep its companion JavaScript files and `assets/` directory alongside it.
 
-- Ten products with search, category filters, and separate galleries by color.
+- Eleven products with search, category filters, and separate galleries by color.
 - Inquiry basket with quantities, requested sizes, browser persistence, and a copyable request summary.
 - Shareable links identify the selected product and color.
 - Unknown prices explicitly show استعلام قیمت. Stock and size guidance follow the selected color; a sold-out card label appears only when all variant stocks are confirmed zero.
@@ -54,13 +54,13 @@ The GitHub repository is `RanaRanaie/lorence-shop`. Cloudflare Pages publishes i
 - Build command: leave blank
 - Build output directory: `public`
 
-The web bundle uses 21 WebP images, about 3 MB total, with the source dimensions preserved. Source screenshots and internal generation notes are excluded from `public/`. Keep the catalog data's image filenames consistent with the asset format in the release bundle.
+The web bundle uses 23 WebP images, about 3 MB total, with the source dimensions preserved. Source screenshots and internal generation notes are excluded from `public/`. Keep the catalog data's image filenames consistent with the asset format in the release bundle.
 
 Cloudflare deployment success was verified. The original publishing connection timed out when opening the public pages.dev URL, so public rendering from that connection was not confirmed.
 
 ## Product information
 
-Confirmed prices are Makan long sleeve, 1,480,000 toman, and imported cropped sweatshirt, 1,680,000 toman. Other prices, sizes, stock counts, and final color names remain unconfirmed until the store supplies them.
+Confirmed prices are Makan long sleeve, 1,480,000 toman, imported cropped sweatshirt, 1,680,000 toman, and drawstring trousers in two colors, 3,200,000 toman. Other prices, sizes, stock counts, and final color names remain unconfirmed until the store supplies them.
 
 Catalog model images are synthetic reconstructions based on the supplied garment references. Compare colors, cuts, lettering, and other details with the actual garments before using them for sales.
 
