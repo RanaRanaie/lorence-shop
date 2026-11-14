@@ -18,3 +18,11 @@ Google Fonts v21, normal weight 400, Latin subset. This font is intended for the
 - Distribution CSS: https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400&display=swap
 - `OFL-CormorantGaramond.txt`: https://raw.githubusercontent.com/google/fonts/main/ofl/cormorantgaramond/OFL.txt
 - Project source: https://github.com/google/fonts/tree/main/ofl/cormorantgaramond
+
+### Heritage headline italic
+
+Downloaded 2026-11-14 from the official Google Fonts distribution. Cormorant Garamond v21, true italic, weight 400, Latin subset, WOFF2 format. Licensed under the same SIL Open Font License 1.1 in `OFL-CormorantGaramond.txt`.
+
+- Local font: `assets/fonts/CormorantGaramond-Italic.woff2` (release copy: `public/assets/fonts/CormorantGaramond-Italic.woff2`).
+- Exact font source: https://fonts.gstatic.com/s/cormorantgaramond/v21/co3smX5slCNuHLi8bLeY9MK7whWMhyjYrGFEsdtdc62E6zd58jD-iNM8.woff2
+- Distribution CSS: https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,400&display=swap
