@@ -5,7 +5,7 @@ services:
     branch: main
     buildCommand: "true"
     staticPublishPath: ./public
-    autoDeployTrigger: off
+    autoDeployTrigger: "off"
     envVars:
       - key: SKIP_INSTALL_DEPS
         value: "true"
