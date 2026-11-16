@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: lorence-shop
+    runtime: static
+    branch: main
+    buildCommand: "true"
+    staticPublishPath: ./public
+    autoDeployTrigger: off
+    envVars:
+      - key: SKIP_INSTALL_DEPS
+        value: "true"
