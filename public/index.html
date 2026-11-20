@@ -15,7 +15,7 @@ select.size-request{padding:14px;background:#faf8f5;color:#222;border:1px solid 
 </style>
 <link rel="stylesheet" href="request-flow.css">
 <link rel="stylesheet" href="editorial.css">
-<link rel="stylesheet" href="heritage.css">
+<link rel="stylesheet" href="heritage.css?v=20261121">
 <a class="skip-link" href="#shop">رفتن به محصولات</a>
 <header class="site-header heritage-header" id="siteHeader">
   <button type="button" class="menu-button heritage-menu" id="menuOpen" aria-label="بازکردن منو"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.25" aria-hidden="true"><path d="M3 7h26M3 16h26M3 25h26"/></svg></button>
@@ -757,7 +757,7 @@ function openProduct(id){
  const previewNote=document.querySelector('#productPreviewNote');
  previewNote.textContent=p[7]?.id==='drawstring-trousers'?'تصویر بازسازی‌شدهٔ چیدمان شلوار در رنگ انتخابی.':'تصاویر، پیش‌نمایش بازسازی‌شدهٔ تن‌خور بر اساس مرجع لباس هستند.';
  let colors=p[7]?.colors;
- if(colors){colors.forEach((c,i)=>{const b=document.createElement('button');b.type='button';b.style.setProperty('--c',c.hex);b.setAttribute('aria-label',c.label);b.onclick=()=>{document.querySelectorAll('.colors button').forEach(t=>{t.classList.remove('selected');t.setAttribute('aria-pressed','false')});b.classList.add('selected');b.setAttribute('aria-pressed','true');activeColorLabel=c.label;document.querySelector('#colorLabel').textContent=(p[7]?.id==='h-set'?'ترکیب تصویر: ':'رنگ: ')+c.label+(p[7]?.id==='bomber-leopard'?' (نام موقت)':'');setGallery(c.files);updateProductAvailability()};document.querySelector('.colors').append(b);if(i===0)b.click()})}
+ if(colors){colors.forEach((c,i)=>{const b=document.createElement('button');b.type='button';b.style.setProperty('--c',c.hex);b.setAttribute('aria-label',c.label);b.textContent=c.label;b.onclick=()=>{document.querySelectorAll('.colors button').forEach(t=>{t.classList.remove('selected');t.setAttribute('aria-pressed','false')});b.classList.add('selected');b.setAttribute('aria-pressed','true');activeColorLabel=c.label;document.querySelector('#colorLabel').textContent=(p[7]?.id==='h-set'?'ترکیب تصویر: ':'رنگ: ')+c.label+(p[7]?.id==='bomber-leopard'?' (نام موقت)':'');setGallery(c.files);updateProductAvailability()};document.querySelector('.colors').append(b);if(i===0)b.click()})}
  else setGallery(p[5]||[p[1]]);
  updateFavoritesUI();
  if(!dialog.open)dialog.showModal();

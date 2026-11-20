@@ -53,3 +53,74 @@ body{background:var(--paper)}
 @media(min-width:1600px){.heritage-hero .photo img{object-position:center 34%}}
 
 @media(min-width:1101px){.site-header.heritage-header{background:#b3b1a6}}
+
+/* A quieter storefront, with legible shopping controls and generous touch targets. */
+:root{--muted:#665f53}
+button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
+:where(button,a,input,select,textarea,summary):focus-visible{outline:2px solid var(--heritage-red);outline-offset:5px}
+.product-section{scroll-margin-top:24px}
+.shop-controls{border:1px solid var(--line);padding:20px;background:#f0eee8}
+.filters{gap:10px;margin-block:24px}
+.filters button{min-height:44px;font-size:14px;padding:10px 18px;border:1px solid #c9c2b5;transition:background .2s,color .2s,border-color .2s}
+.filters button.active,.filters button[aria-pressed=true]{background:#28271f;color:#fff;border-color:#28271f}
+.card{min-width:0}
+.card .frame{border:1px solid #d5cec166;transition:box-shadow .25s}
+.card:hover .frame{box-shadow:0 12px 28px #28271f12}
+.card h3{font-size:16px;line-height:1.9;margin-block:16px 8px;color:#28271f}
+.card-bottom{font-size:14px;line-height:1.9;gap:10px;flex-wrap:wrap}
+.card .dot{width:13px;height:13px}
+.category-caption,.look>span{font-size:14px;line-height:1.9}
+.story-copy p,.editorial-copy p,.visit address{font-size:16px;line-height:2.1;color:#514d43}
+.detail-info{padding:64px 32px 32px}
+.detail-info p,.detail-info .request-help,.detail-info .preview-note{font-size:14px!important;line-height:2!important;color:#625c50!important}
+.detail-info #productPrice{font-size:21px!important;color:#28271f!important;font-weight:500;font-variant-numeric:tabular-nums}
+.detail h2{font-size:28px;line-height:1.7}
+.request-label,.size-help{font-size:14px}
+.size-request,.request-flow input,.request-flow select,.request-flow textarea{font-size:16px;min-height:48px}
+.colors{display:flex;flex-wrap:wrap;gap:10px;margin-block:24px 12px}
+.colors button{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-width:85px;width:auto;height:auto;min-height:44px;padding:9px 14px;border:1px solid #bfb8aa;border-radius:2px;outline:0;background:transparent;color:#38352e;font-size:14px;line-height:1.7}
+.colors button:before{content:'';width:18px;height:18px;border-radius:50%;background:var(--c);border:1px solid #28271f33;flex:none}
+.colors button.selected{border:1px solid #28271f;outline:1px solid #28271f;background:#e9e5dc}
+.colors button:focus-visible{outline:2px solid var(--heritage-red);outline-offset:4px}
+.add-request,.view-basket,.basket-actions button,.flow-button{font-size:15px;min-height:48px;line-height:1.8}
+.close{width:44px;height:44px;font-size:27px;background:#faf9f4f5}
+.basket-dialog h2,.request-flow h2{font-size:27px}
+.basket-intro,.basket-row p,.basket-summary,.basket-summary small,.flow-intro,.flow-help,.flow-context,.flow-preview pre,.order-guide summary,.order-guide ol,.basket-status{font-size:14px;line-height:2}
+.basket-row h3{font-size:16px;line-height:1.8}
+.basket-controls{gap:8px;flex-wrap:wrap}
+.basket-controls button{width:44px;height:44px;font-size:19px}
+.basket-controls .remove-item{font-size:14px;min-height:44px;padding-inline:10px}
+.basket-summary{background:#eeece5;border:1px solid var(--line);padding:20px;margin-block:20px}
+.flow-preview pre{overflow-wrap:anywhere;white-space:pre-wrap}
+.footer-column,.footer-column a,.note{font-size:14px;line-height:2}
+.heritage-header .basket-count{min-width:19px;width:19px;height:19px;font-size:11px;line-height:19px}
+@media(max-width:760px){
+ .heritage-header .heritage-navigation{font-size:10px;letter-spacing:.1em;gap:8px}
+ .heritage-header .tools button,.heritage-header .heritage-menu{width:44px;min-width:44px}
+ .heritage-header .tools{gap:2px}
+ .heritage-header .heritage-brand{font-size:25px;letter-spacing:.16em}
+ .heritage-hero .hero-copy p{font-size:11px;letter-spacing:.14em}
+ .heritage-hero .hero-link{font-size:11px;min-height:48px}
+ .section{padding-inline:20px}
+ .shop-controls{padding:16px}
+ .filters{flex-wrap:nowrap;overflow:auto;padding-block:4px 12px;scrollbar-width:thin;justify-content:flex-start}
+ .filters button{flex:none;white-space:nowrap;font-size:13px;padding-inline:15px}
+ .grid{gap:28px 14px}
+ .card h3{font-size:14px;margin-top:12px}
+ .card-bottom{font-size:13px}
+ .detail-info{padding:24px 20px 30px}
+ .detail h2{font-size:25px}
+ .mainpic{max-height:52svh}
+ .basket-dialog{padding:54px 20px 24px;max-height:94svh}
+ .basket-row{grid-template-columns:64px minmax(0,1fr);gap:12px}
+ .basket-row img{width:64px;height:88px}
+ .basket-summary{padding:16px}
+ .story-copy{padding:32px 24px}
+}
+@media(hover:none){.card:hover img{transform:none}}
+.shop-control-label{font-size:14px;color:#625c50}
+.shop-search-field input,.shop-sort select{font-size:16px;min-height:48px}
+.shop-search-field button{min-width:44px;min-height:44px}
+.basket-feedback{font-size:14px}
+@media(max-width:760px){.basket-content{padding:56px 20px 24px}.shop-controls{grid-template-columns:1fr;gap:18px}.shop-sort{min-width:0}}
+@media(max-width:380px){.heritage-header .heritage-brand{font-size:22px;letter-spacing:.12em}}
